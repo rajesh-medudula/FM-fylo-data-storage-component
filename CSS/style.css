@@ -226,11 +226,13 @@ main {
   margin: 0;
 }
 
-.input-storage-left::placeholder {
-  font-size: 0.4rem;
+/* .input-storage-left::placeholder {
+  font-size: 0.6rem;
   opacity: 0.6;
-  text-align: center;
-}
+  position: relative;
+  bottom: 12px;
+  color: #000000;
+} */
 
 /* pop-up */
 
@@ -377,7 +379,7 @@ body.popup-open {
   }
 
   main {
-    background: url(/images/bg-desktop.png) no-repeat bottom center / contain;
+    background: url("../images/bg-desktop.png") no-repeat bottom center / contain;
     flex-flow: row wrap;
     gap: 3rem;
   }

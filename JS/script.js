@@ -170,6 +170,17 @@ window.addEventListener("DOMContentLoaded", () => {
       badgeInput.value = remaining;
       autoResizeInput();
     }
+  } else {
+
+    if (badgeInput) {
+      badgeInput.value = TOTAL_STORAGE;
+      autoResizeInput();
+    }
+
+    if (rangeInput) {
+      rangeInput.value = 0;
+      updateSliderUI();
+    }
   }
 });
 
