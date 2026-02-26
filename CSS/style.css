@@ -229,24 +229,6 @@ main {
   margin: 0;
 }
 
-/* .input-storage-left::placeholder {
-  font-size: 0.6rem;
-  opacity: 0.6;
-  position: relative;
-  bottom: 12px;
-  color: #000000;
-} */
-
-.label-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
 
 .tooltip {
   display: none;
