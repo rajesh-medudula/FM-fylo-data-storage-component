@@ -12,6 +12,7 @@ const storageLeft = document.querySelector(".storage-left");
 const storageAvailable = document.querySelector(".storage-available");
 const progressBar = document.querySelector(".bar");
 const badgeInput = document.querySelector(".storage-left input");
+const pageWrapper = document.querySelector(".page-wrapper");
 
 // utility functions
 function calculatePercentage(value, max) {
@@ -21,11 +22,13 @@ function calculatePercentage(value, max) {
 function openPopup() {
   popup.classList.add("active");
   document.body.classList.add("popup-open");
+  pageWrapper.classList.add("blur");
 }
 
 function closePopup() {
   popup.classList.remove("active");
   document.body.classList.remove("popup-open");
+  pageWrapper.classList.remove("blur");
 }
 
 function updateSliderUI() {
@@ -182,6 +185,42 @@ window.addEventListener("DOMContentLoaded", () => {
       updateSliderUI();
     }
   }
+
+  // mobile tip popup (below 1024px)
+const tipPopup = document.querySelector(".pop-up-tip");
+const tipBtn = tipPopup ? tipPopup.querySelector("button") : null;
+
+if (tipPopup && window.innerWidth < 1024) {
+  setTimeout(() => {
+    tipPopup.classList.add("active");
+    document.body.classList.add("popup-open");
+    pageWrapper.classList.add("blur");
+  }, 2000);
+}
+
+if (tipBtn) {
+  tipBtn.addEventListener("click", () => {
+    tipPopup.classList.remove("active");
+    document.body.classList.remove("popup-open");
+    pageWrapper.classList.remove("blur");
+  });
+}
+
+const tooltip = document.querySelector(".tooltip");
+
+if (tooltip && window.innerWidth >= 1024) {
+
+  // show after 2 seconds
+  setTimeout(() => {
+    tooltip.classList.add("active");
+
+    // hide after 5 seconds
+    setTimeout(() => {
+      tooltip.classList.remove("active");
+    }, 5000);
+
+  }, 2000);
+}
 });
 
 // breakpoint reinitializer
